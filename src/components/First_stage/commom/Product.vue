@@ -95,7 +95,7 @@ export default {
         color: gray;
         }
     .page-tab {
-        padding: 0 1rem 0 .16rem;
+        padding: 0 .1rem 0 .16rem;
         margin: 2rem 0 0 0;
         height: auto;
         position: relative;

@@ -1,7 +1,7 @@
 <template>
     <div class="home-list">
-        <div class="content" v-for="(item,i) of list" :key="i">
-            <ul>
+        <div class="jdlist">
+            <ul class="content" v-for="(item,i) of list" :key="i">
                 <li>
                     <div class="item">
                         <a href="javascript:;">
@@ -13,14 +13,11 @@
                                 <div class="msg">{{item.pname}}</div>
                                 <div class="price ">{{item.price}}</div>
                             </div>
-                            <!-- <mt-button>加入购物车</mt-button> -->
                         </a>
                     </div>    
                 </li>
-                <!-- <li><img src="http://127.0.0.1:4000/02.jpg"></li> -->
             </ul>
         </div>
-        <!-- <mt-button>查看购物车</mt-button> -->
         <div class="more">
             <a href="javascript:;">
                 <span @click="loadMore"> more+</span>
@@ -32,7 +29,7 @@
 <script>
 export default {
     props:{
-        jdwrapper:{default:""},
+        tpwrapper:{default:""},
     },
     data(){
         return{
@@ -82,6 +79,15 @@ export default {
         border: 0px;
         color: #323232;
     }
+    img {
+        border: none;
+        vertical-align: top;
+    }
+    .home-list .jdlist{
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
     .home-list .content {
         overflow: hidden;
         padding: .16rem .01rem 0 0;
@@ -109,7 +115,6 @@ export default {
         text-align: -webkit-match-parent;
     }
     .home-list .content ul li {
-        display: flex;
         float: left;
         width: 50%;
         padding: .02rem 0 0 0;
@@ -133,6 +138,7 @@ export default {
     }
     .home-list .content {
         height: 14.62rem;
+        width: 49%;
         overflow: hidden; 
         background: #FAFAFA;
     }

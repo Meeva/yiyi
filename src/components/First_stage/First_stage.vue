@@ -170,6 +170,6 @@ export default {
         overflow: hidden;
     }
     mt-tab-container{
-        z-index: 100;
+        z-index: 0;
     }
 </style>

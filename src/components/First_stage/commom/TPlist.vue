@@ -7,8 +7,8 @@
                 
             </a>
         </div> 
-        <div class="content" v-for="(item,i) of list" :key="i">
-            <ul>
+        <div class="jdlist">
+            <ul class="content" v-for="(item,i) of list" :key="i">
                 <li>
                     <div class="item">
                         <a href="javascript:;">
@@ -24,7 +24,7 @@
                         </a>
                     </div>    
                 </li>
-                <li>
+                <!-- <li>
                     <div class="item">
                         <a href="javascript:;">
                             <div class="img">
@@ -35,13 +35,11 @@
                                 <div class="msg">{{item.pname}}</div>
                                 <div class="price ">{{item.price}}</div>
                             </div>
-                            <!-- <mt-button>加入购物车</mt-button> -->
                         </a>
                     </div>    
                 </li>
-                <!-- <li><img src="http://127.0.0.1:4000/02.jpg"></li> -->
+                <li><img src="http://127.0.0.1:4000/02.jpg"></li> -->
             </ul>
-            
         </div>
         <!-- <mt-button>查看购物车</mt-button> -->
         <div class="more">
@@ -70,7 +68,14 @@ export default {
             //1.创建url
             var url = "First_stage"
             //2.创建obj参数
-            var obj = {pno:1};
+            var num=1;
+            var obj = {pno:num++};
+            // for(var num=1;num<20;num++){
+            //     var obj={pno:num};
+            //     return num;
+            //     console.log(num);
+            // }
+            // console.log(num);
             //3.发送axios请求
             this.axios.get(url,{params:obj}).then(res=>{
                 //4.接收返回结果并且显示
@@ -109,6 +114,10 @@ export default {
     img {
         border: none;
         vertical-align: top;
+    }
+    .home-list .jdlist{
+        display: flex;
+        flex-wrap: wrap;
     }
     .home-list .content {
         overflow: hidden;
@@ -160,7 +169,9 @@ export default {
     }
     .home-list .content {
         height: 14.62rem;
-        overflow: hidden;
+        width: 48%;
+        margin: .5rem .05rem 0 .45rem;
+        overflow: hidden; 
         background: #FAFAFA;
     }
     .home-list .content .info {
