@@ -24,24 +24,8 @@
                         </a>
                     </div>    
                 </li>
-                <!-- <li>
-                    <div class="item">
-                        <a href="javascript:;">
-                            <div class="img">
-                                <img :src="item.img">
-                            </div>
-                            <div class="info">
-                                <div class="title">{{item.name}}</div>
-                                <div class="msg">{{item.pname}}</div>
-                                <div class="price ">{{item.price}}</div>
-                            </div>
-                        </a>
-                    </div>    
-                </li>
-                <li><img src="http://127.0.0.1:4000/02.jpg"></li> -->
             </ul>
         </div>
-        <!-- <mt-button>查看购物车</mt-button> -->
         <div class="more">
             <a href="javascript:;">
                 <span @click="loadMore"> more+</span>
@@ -58,6 +42,7 @@ export default {
     data(){
         return{
             list:[],
+            num:1
         }
     },
     created(){
@@ -67,15 +52,8 @@ export default {
         loadMore(){
             //1.创建url
             var url = "First_stage"
-            //2.创建obj参数
-            var num=1;
-            var obj = {pno:num++};
-            // for(var num=1;num<20;num++){
-            //     var obj={pno:num};
-            //     return num;
-            //     console.log(num);
-            // }
-            // console.log(num);
+            //2.创建obj参
+            var obj = {pno:this.num++};
             //3.发送axios请求
             this.axios.get(url,{params:obj}).then(res=>{
                 //4.接收返回结果并且显示

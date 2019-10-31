@@ -1,8 +1,8 @@
 <template>
     <div class="home-list">
         <div class="jdlist">
-            <ul class="content" v-for="(item,i) of list" :key="i">
-                <li>
+            <ul class="content">
+                <li class="li" v-for="(item,i) of list" :key="i">
                     <div class="item">
                         <a href="javascript:;">
                             <div class="img">
@@ -34,6 +34,7 @@ export default {
     data(){
         return{
             list:[],
+            num:1
         }
     },
     created(){
@@ -44,14 +45,7 @@ export default {
             //1.创建url
             var url = "First_stage"
             //2.创建obj参数
-            var num=1;
-            var obj = {pno:num++};
-            // for(var num=1;num<20;num++){
-            //     var obj={pno:num};
-            //     return num;
-            //     console.log(num);
-            // }
-            // console.log(num);
+            var obj = {pno:this.num++};
             //3.发送axios请求
             this.axios.get(url,{params:obj}).then(res=>{
                 //4.接收返回结果并且显示
@@ -83,14 +77,18 @@ export default {
         border: none;
         vertical-align: top;
     }
-    .home-list .jdlist{
-        display: flex;
-        flex-wrap: wrap;
-        
-    }
+    .home-list{
+        height: auto;
+    } 
     .home-list .content {
         overflow: hidden;
-        padding: .16rem .01rem 0 0;
+        padding: .16rem .2rem 0 0;
+    }
+    .home-list .content .li{
+        height: 14rem;
+        width: 47%;
+        display: inline-flex;
+        margin: .5rem .15rem 0 .5rem;
     }
     .home-list .content ul {
         overflow: hidden;
@@ -100,15 +98,6 @@ export default {
         list-style: none;
         margin: 0;
         padding: 0;
-    }
-    ul {
-        display: block;
-        list-style-type: disc;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        padding-inline-start: 40px;
     }
     li {
         display: list-item;
@@ -120,7 +109,7 @@ export default {
         padding: .02rem 0 0 0;
     }
     .home-list .content .item {
-        margin: 0 1rem .14rem .1rem;
+        margin: 0 .5rem .14rem .1rem;
         border-radius: .8rem;
         box-shadow: .5rem 0.4rem 0.4rem 0 rgba(153, 153, 153, 0.15);
         position: relative;
@@ -137,8 +126,7 @@ export default {
         object-fit: cover;
     }
     .home-list .content {
-        height: 14.62rem;
-        width: 49%;
+        height: auto;
         overflow: hidden; 
         background: #FAFAFA;
     }

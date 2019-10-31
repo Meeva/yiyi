@@ -58,6 +58,7 @@ export default {
     data(){
         return{
             list:[],
+            num:1
         }
     },
     created(){
@@ -68,13 +69,7 @@ export default {
             //1.创建url
             var url = "First_stage"
             //2.创建obj参数
-            var num=1;
-            var obj = {pno:num++};
-            // for(var num=1;num<20;num++){
-            //     var obj={pno:num};
-            //     return num;
-            //     console.log(num);
-            // }
+            var obj = {pno:this.num++};
             // console.log(num);
             //3.发送axios请求
             this.axios.get(url,{params:obj}).then(res=>{

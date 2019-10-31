@@ -70,7 +70,6 @@ export default {
 </script>
 <style>
     .top-fixed {
-        position: fixed;
         top: 2rem;
         left: 0;
         right: 0;
