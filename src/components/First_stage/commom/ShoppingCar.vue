@@ -20,7 +20,7 @@
                 <img :src="car" alt="">
             </div>
             <p>购物车还空空的呢~</p>
-            <a href="javascript:;" class="button bac1">去购物</a>
+            <a href="javascript:;" class="button bac1" @click="go">去购物</a>
         </div>
     </div>
 </template>
@@ -31,6 +31,11 @@ export default {
         left:{default:""},
         car:{default:""},
     },
+    methods:{
+        go(){
+            this.$router.push('/XiangQ');
+        }
+    }
 }
 </script>
 <style scoped>

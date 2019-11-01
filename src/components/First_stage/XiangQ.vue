@@ -17,10 +17,12 @@
             </div>
             <div class="right">
                 <a href="javascript:;" class="icon cart show">
-                    <div class="background"></div>
+                    <img src="../../img/XiangQ/header-cart-icon.png" alt="">
+                    <div class="background1"></div>
                 </a>
                 <a href="javascript:;" class="icon more show">
-                    <div class="background"></div>
+                    <img src="../../img/XiangQ/header-more-icon.png" alt="">
+                    <div class="background2"></div>
                 </a>
             </div>
         </div>
@@ -60,6 +62,13 @@
     </div>
 </template>
 <style>
+    .goods-header .right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0 .08rem 0 0;
+    }
     .goods-footer .link .item img{
         width:1.55rem;
     }
